@@ -36,11 +36,10 @@ Download and setup
 ::
 
     git clone ssh://git@ip:port~/projects/isac.git
-    virtualenv isac
+    virtualenv -p python3 isac
     cd isac
-    git submodule init
-    git submodule update
     source bin/activate
+    pip install -r requirements.txt
 
 
 Setup database
@@ -76,21 +75,17 @@ Setup project
 =============
 ::
 
-    cd server
-    pip install -r requirements.txt
-    python manage.py collectstatic
-    python manage.py migrate
-    python manage.py createsuperuser
-    python manage.py loaddata
+    server collectstatic
+    server migrate
+    server createsuperuser
+    server loaddata
 
     # Make docs
-    cd docs
+    cd src/docs
     touch -c -- * */* */*/* */*/*/* # To update menus of all pages
     make html
-    cd ..
-    cd ..
 
-    cd web
+    cd src/web
     sudo npm install -g grunt-cli
     npm install
 
