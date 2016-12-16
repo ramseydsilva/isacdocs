@@ -6,6 +6,7 @@ Start services
 
 ::
 
+    isac configure
     isac test
     isac build
     isac start

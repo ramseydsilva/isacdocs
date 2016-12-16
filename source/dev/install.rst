@@ -75,10 +75,10 @@ Setup project
 =============
 ::
 
-    server collectstatic
-    server migrate
-    server createsuperuser
-    server loaddata
+    isac collectstatic
+    isac migrate
+    isac createsuperuser
+    isac loaddata
 
     # Make docs
     cd src/docs
