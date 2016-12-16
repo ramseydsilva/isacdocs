@@ -64,8 +64,8 @@ setup(
 
     #install_requires=[],
     #extras_require={},
-    package_data={},
-    include_package_data=True,
+    #package_data={},
+    #include_package_data=True,
     #data_files=[('my_data', ['data/data_file'])],
 
     # To provide executable scripts, use entry points in preference to the
