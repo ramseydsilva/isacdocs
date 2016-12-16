@@ -10,17 +10,6 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
-import os
-
-def package_files(directory):
-    paths = []
-    print(directory)
-    for (path, directories, filenames) in os.walk(directory):
-        print(path, directories, filenames)
-        for filename in filenames:
-            paths.append(os.path.join('..', path, filename))
-    return paths
-
 setup(
     name='docs',
 
@@ -64,16 +53,7 @@ setup(
 
     #install_requires=[],
     #extras_require={},
-    #package_data={},
-    #include_package_data=True,
+    #package_data={ 'sample': ['package_data.dat'], },
     #data_files=[('my_data', ['data/data_file'])],
 
-    # To provide executable scripts, use entry points in preference to the
-    # "scripts" keyword. Entry points provide cross-platform support and allow
-    # pip to create the appropriate form of executable for the target platform.
-    entry_points={
-        'console_scripts': [
-            'server=server:main',
-        ],
-    },
 )
