@@ -28,18 +28,4 @@ Firewall
     sudo ufw disable
     sudo ufw enable
 
-Setup Git repos
----------------
-
-::
-
-    mkdir -p ~/repos/isac  && cd !$
-    git init --bare server.git
-    git init --bare web.git
-
-    cd ~/projects/isac/src/server
-    git clone ~/repos/isac/server.git # Customize to your path location ex: username@host:~/repos/isac/server.git
-    cd ~/projects/isac/src/web
-    git clone ~/repos/isac/web.git # Customize to your path location ex: username@host:~/repos/isac/web.git
-
 .. _management commands: /dev/management_commands.html-
