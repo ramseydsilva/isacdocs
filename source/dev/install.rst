@@ -85,7 +85,7 @@ Setup project
     touch -c -- * */* */*/* */*/*/* # To update menus of all pages
     make html
 
-    cd src/web
+    cd src/web/web
     sudo npm install -g grunt-cli
     npm install
 
