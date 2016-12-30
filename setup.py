@@ -51,7 +51,11 @@ setup(
     # simple. Or you can use find_packages().
     packages=[],
 
-    #install_requires=[],
+    install_requires=[
+        'Sphinx==1.5.1',
+        'sphinx-autobuild==0.6.0',
+        'sphinx-rtd-theme==0.1.9',
+    ],
     #extras_require={},
     #package_data={ 'sample': ['package_data.dat'], },
     #data_files=[('my_data', ['data/data_file'])],
