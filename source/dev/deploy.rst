@@ -1,17 +1,21 @@
 Deploy
 ======
 
-Start services
---------------
+Start project
+-------------
 
 ::
-
-    isac configure
-    isac test
     isac build
+    isac test
     isac start
 
 See the section on `management commands`_ to learn more commands.
+
+Stop project
+------------
+
+::
+    isac stop
 
 Firewall
 --------

@@ -39,6 +39,7 @@ Download and setup
     virtualenv -p python3 isac
     cd isac
     source bin/activate
+    pip install --upgrade pip
     pip install -r requirements.txt
 
 
@@ -64,7 +65,6 @@ Setup database
     exit
 
     # Update project settings
-    mkdir -p config
     touch config/site.config
     echo "DB_USER=isac_user" >> config/site.config
     echo "DB_NAME=isac" >> config/site.config
@@ -75,19 +75,8 @@ Setup project
 =============
 ::
 
-    isac collectstatic
-    isac migrate
     isac createsuperuser
-    isac loaddata
-
-    # Make docs
-    cd src/docs
-    touch -c -- * */* */*/* */*/*/* # To update menus of all pages
-    make html
-
-    cd src/web/web
-    sudo npm install -g grunt-cli
-    npm install
+    isac loadsensordata
 
 Done! You can skip the next section and go ahead and `deploy`_ isac.
 
