@@ -7,7 +7,7 @@ Start project
 ::
     isac build
     isac test
-    isac start
+    sudo ./bin/isac start
 
 See the section on `management commands`_ to learn more commands.
 
@@ -15,7 +15,7 @@ Stop project
 ------------
 
 ::
-    isac stop
+    sudo ./bin/isac stop
 
 Firewall
 --------
