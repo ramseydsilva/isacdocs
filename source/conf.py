@@ -35,6 +35,11 @@ extensions = ['sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig']
 
+from django.conf import settings
+html_context = {
+    'base_url': settings.BASE_URL
+}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
