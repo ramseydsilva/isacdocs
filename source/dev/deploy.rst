@@ -1,6 +1,8 @@
 Deploy
 ======
 
+By design, root permission is needed to start, stop, check status the server. So be sure to add sudo before running those commands.
+
 Start project
 -------------
 
@@ -16,6 +18,12 @@ Stop project
 
 ::
     sudo ./bin/isac stop
+
+Check status
+------------
+
+::
+    sudo ./bin/isac status
 
 Firewall
 --------

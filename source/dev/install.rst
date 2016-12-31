@@ -49,12 +49,12 @@ Setup database
 ::
 
     # Postgresql
-    cd ..
-    sudo wget https://ftp.postgresql.org/pub/source/v9.3.8/postgresql-9.3.8.tar.gz
-    sudo tar -xvzf postgresql-9.3.8.tar.gz && cd postgresql-9.3.8
-    sudo ./configure --prefix=$VIRTUAL_ENV/local/pgsql --exec-prefix=$VIRTUAL_ENV --with-pgport=5430
-    sudo make
-    sudo make install
+    cd local/src
+    wget https://ftp.postgresql.org/pub/source/v9.3.8/postgresql-9.3.8.tar.gz
+    tar -xvzf postgresql-9.3.8.tar.gz && cd postgresql-9.3.8
+    ./configure --prefix=$VIRTUAL_ENV/local/pgsql --exec-prefix=$VIRTUAL_ENV --with-pgport=5430
+    make
+    make install
 
     initdb -D $VIRTUAL_ENV/data/pgsql/data
     pg_ctl -D $VIRTUAL_ENV/data/pgsql/data -l logfile start
@@ -64,11 +64,18 @@ Setup database
     createdb -U isac_user isac
     exit
 
+    # Rabbitmq
+    cd local/src
+    wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server-generic-unix-3.6.6.tar.xz
+    tar -xvf rabbitmq-server-generic-unix-3.5.7.tar.xz
+    ln -s $VIRTUAL_ENV/local/src/rabbitmq_server-3.6.6/sbin/* $VIRTUAL_ENV/bin/.
+
     # Update project settings
     touch config/site.config
     echo "DB_USER=isac_user" >> config/site.config
     echo "DB_NAME=isac" >> config/site.config
     echo "DB_PASS=isac_pass" >> config/site.config
+    # TODO Show link to list of settings
     # Alternatively you can use cat >> config/site.config
 
 Setup project
